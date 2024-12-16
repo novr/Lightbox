@@ -4,8 +4,9 @@ import AVFoundation
 
 public class LightboxConfig {
   /// Whether to show status bar while Lightbox is presented
+  @MainActor
   public static var hideStatusBar = true
-    
+  @MainActor
   public static var imageBackgroundColor = UIColor.black
 
   /// Provide a closure to handle selected video
@@ -20,6 +21,7 @@ public class LightboxConfig {
   }
 
   /// How to load image onto SDAnimatedImageView
+  @MainActor
   public static var loadImage: ((UIImageView, URL, ((UIImage?) -> Void)?) -> Void)?
 
   /// Indicator is used to show while image is being fetched
@@ -31,8 +33,10 @@ public class LightboxConfig {
   /// Number of images to preload.
   ///
   /// 0 - Preload all images (default).
+  @MainActor
   public static var preload = 0
 
+  @MainActor
   public struct PageIndicator {
     public static var enabled = true
     public static var separatorColor = UIColor(hex: "3D4757")
@@ -48,6 +52,7 @@ public class LightboxConfig {
     ]
   }
 
+  @MainActor
   public struct CloseButton {
     public static var enabled = true
     public static var size: CGSize?
@@ -65,6 +70,7 @@ public class LightboxConfig {
     ]
   }
 
+  @MainActor
   public struct DeleteButton {
     public static var enabled = false
     public static var size: CGSize?
@@ -82,6 +88,7 @@ public class LightboxConfig {
     ]
   }
 
+  @MainActor
   public struct InfoLabel {
     public static var enabled = true
     public static var textColor = UIColor.white
@@ -94,6 +101,7 @@ public class LightboxConfig {
     ]
   }
 
+  @MainActor
   public struct Zoom {
     public static var minimumScale: CGFloat = 1.0
     public static var maximumScale: CGFloat = 3.0

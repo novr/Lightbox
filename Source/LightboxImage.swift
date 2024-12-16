@@ -32,6 +32,7 @@ open class LightboxImage {
     self.videoURL = videoURL
   }
 
+  @MainActor
   open func addImageTo(_ imageView: UIImageView, completion: ((UIImage?) -> Void)? = nil) {
     if let image = image {
       imageView.image = image
